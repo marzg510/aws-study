@@ -24,12 +24,6 @@ aws ec2 describe-addresses --query 'Addresses[?InstanceId==null].AllocationId' -
 EIP_ALLOC_ID=${EC2_EIP_ALLOC_IDS[0]} && echo "free EIP --> ${EIP_ALLOC_ID}"
 
 echo "waiting for the instance to be running"
-#echo "aws ec2 describe-instance-status --instance-ids ${EC2_INST_ID}"
-#aws ec2 describe-instance-status --instance-ids ${EC2_INST_ID}
-#echo "aws ec2 describe-instance-status --instance-ids ${EC2_INST_ID} --query 'InstanceStatuses[].SystemStatus.Status' --output text"
-#aws ec2 describe-instance-status --instance-ids ${EC2_INST_ID} --query 'InstanceStatuses[].SystemStatus.Status' --output text
-#echo "instancestate name"
-#aws ec2 describe-instance-status --instance-ids ${EC2_INST_ID} --query 'InstanceStatuses[].InstanceState.Name' --output text
 INST_STATE="waiting"
 while [ "${INST_STATE}" != "running" ]; do
   INST_STATE=$(aws ec2 describe-instance-status --instance-ids ${EC2_INST_ID} --query 'InstanceStatuses[].InstanceState.Name' --output text)
