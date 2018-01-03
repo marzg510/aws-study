@@ -7,6 +7,6 @@ EC2_INSTANCE_IDS=$( \
     --query 'Reservations[].Instances[].InstanceId' \
     --output text \
 ) \
-&& echo "target instances ${EC2_INSTANCE_IDS}" \
-&& aws ec2 terminate-instances --instance-ids ${EC2_INSTANCE_IDS}
+&& echo "target instances --> ${EC2_INSTANCE_IDS}"
+[ "${EC2_INSTANCE_IDS}" != "" ] && aws ec2 terminate-instances --instance-ids ${EC2_INSTANCE_IDS}
 
