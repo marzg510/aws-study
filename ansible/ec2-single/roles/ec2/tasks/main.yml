@@ -1,0 +1,61 @@
+- name: vpc_id取得
+  ec2_vpc_net_facts:
+    region: "{{ my_vars.aws.common.region }}"
+    filters:
+      "tag:Name": "{{ my_vars.aws.vpc.name }}"
+  register: vpc_net_fact
+  check_mode: no
+
+- debug: var=vpc_net_fact
+
+#- name: subnet id取得
+#  ec2_vpc_subnet_facts:
+#    region: "{{ my_vars.aws.common.region }}"
+#    filters:
+#      vpc_id: "{{ vpc_net_fact.vpcs[0].id }}"
+#      "tag:Name": "{{ item.value.subnet }}"
+#  with_dict: "{{ my_vars.aws.ec2 }}"
+#  register: subnet_fact
+#  when: my_vars.aws.ec2 is defined
+
+#- name: subnet dict作成
+#  set_fact:
+#    subnet_dict:
+#      {%- set dict = {} -%}
+#      {%- for i in range(subnet_fact.results|length) -%}
+#      {%-   set _ = dict.update({subnet_fact.results[i].subnets[0].tags.Name: subnet_fact.results[i].subnets[0].id}) -%}
+#      {%- endfor -%}
+#      {{ dict }}
+#  when: my_vars.aws.ec2 is defined
+
+- name: EC2インスタンスを作成
+  ec2:
+    image: "{{ item.value.ami_image }}"
+    instance_type: "{{ item.value.instance_type }}"
+    region: "{{ my_vars.aws.common.region }}"
+    key_name: "{{ item.value.key_name }}"
+    group: "{{ item.value.security_group }}"
+#      vpc_subnet_id:
+#      {%- set id = subnet_dict[item.value.subnet] -%}
+#      {{ id }}
+    instance_tags: "{{ item.value.tags }}"
+#    assign_public_ip: "{{ item.value.assign_public_ip }}"
+#    private_ip: "{{ item.value.private_ip | default(omit) }}"
+    wait: yes
+    wait_timeout: 300
+#    volumes:
+#      - device_name: "{{ item.value.device_name }}"
+#        device_type: "{{ item.value.device_type }}"
+#        volume_size: "{{ item.value.volume_size }}"
+#        delete_on_termination: true
+    count_tag:
+      Name: "{{ item.value.tags.Name }}"
+    exact_count: 1
+    user_data: |
+      #!/bin/bash
+      # 初期設定スクリプトなど
+  with_dict: "{{ my_vars.aws.ec2 }}"
+  register: ec2
+  when: my_vars.aws.ec2 is defined
+
+- debug: var=ec2

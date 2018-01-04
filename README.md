@@ -256,10 +256,39 @@ aws elbv2 delete-target-group --target-group-arn ${ELB_TG_ARN}
 ### install
 ```
 pip install ansible boto
+pip install boto3
+```
+
+### EC2 simple
+```
+cd ansible/ec2-simple
+ansible-playbook main.yml
+ansible-playbook -i hosts main.yml
+```
+
+### prepare
+```
+mkdir -p hosts
+mkdir -p host_vars
+mkdir -p roles/ec2/tasks
 ```
 
 ### inventory
 ```
-mkdir -p hosts
+cat >hosts/aws <<EOF
+[aws]
+localhost ansible_connection=local ansible_python_interpreter=/home/masaru/.pyenv/shims/python
+EOF
 ```
+
+### vars
+host_vars/localhost.yml
+
+### role
+roles/ec2/tasks/main.yml
+
+### site.yml
+
+### 実行
+ansible-playbook -i hosts/aws -l localhost site.yml
 

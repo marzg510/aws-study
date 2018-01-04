@@ -1,0 +1,6 @@
+- name: ec2
+  hosts: localhost
+  connection: local
+  roles:
+    - role: ec2
+

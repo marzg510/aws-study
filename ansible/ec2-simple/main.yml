@@ -1,0 +1,21 @@
+- name: ec2-simple
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: create EC2 instance
+      ec2:
+        image: ami-da9e2cbc # Amazon Linux
+        instance_type: t2.micro
+        region: ap-northeast-1
+        key_name: demo
+        group: 
+          - default
+          - MyHomeOnly
+        instance_tags:
+          Name: httpd
+          Number: 1
+          Role: test
+        wait: yes
+        wait_timeout: 300
+      register: ec2_result
+    - debug: var=ec2_result

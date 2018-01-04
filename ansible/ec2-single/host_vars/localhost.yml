@@ -1,0 +1,18 @@
+my_vars:
+  aws:
+    common:
+      region: ap-northeast-1
+    vpc:
+      name: default
+    ec2:
+      http1:
+        ami_image: ami-da9e2cbc # Amazon Linux
+        key_name: demo
+        security_group:
+          - default
+          - MyHomeOnly
+        instance_type: t2.micro
+        tags:
+          Name: httpd
+          Number: 1
+          Role: test
