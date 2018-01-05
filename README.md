@@ -266,29 +266,9 @@ ansible-playbook main.yml
 ansible-playbook -i hosts main.yml
 ```
 
-### prepare
+### EC2 single
 ```
-mkdir -p hosts
-mkdir -p host_vars
-mkdir -p roles/ec2/tasks
+cd ansible/ec2-single
+ansible-playbook -i hosts/aws site.yml
 ```
-
-### inventory
-```
-cat >hosts/aws <<EOF
-[aws]
-localhost ansible_connection=local ansible_python_interpreter=/home/masaru/.pyenv/shims/python
-EOF
-```
-
-### vars
-host_vars/localhost.yml
-
-### role
-roles/ec2/tasks/main.yml
-
-### site.yml
-
-### 実行
-ansible-playbook -i hosts/aws -l localhost site.yml
 
