@@ -1,0 +1,6 @@
+- name: ec2
+  hosts: awsclihost
+  connection: local
+  roles:
+    - role: ec2
+

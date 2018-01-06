@@ -272,3 +272,10 @@ cd ansible/ec2-single
 ansible-playbook -i hosts/aws site.yml
 ```
 
+### EC2 httpd EIP single
+* 固定ＩＰ化とRoute53への登録
+* http://www.1x1.jp/blog/2014/10/create-ec2-instance-with-ansible.html
+```
+cd ansible/httpd-eip-single
+ansible-playbook -i hosts/aws main.yml
+```

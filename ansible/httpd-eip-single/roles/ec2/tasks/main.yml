@@ -1,4 +1,4 @@
-- name: EC2インスタンスを作成
+- name: create new ec2 instances
   ec2:
     image: "{{ item.value.ami_image }}"
     instance_type: "{{ item.value.instance_type }}"
@@ -6,13 +6,11 @@
     key_name: "{{ item.value.key_name }}"
     group: "{{ item.value.security_group }}"
     instance_tags: "{{ item.value.tags }}"
+    count: 1
 #    assign_public_ip: "{{ item.value.assign_public_ip }}"
 #    private_ip: "{{ item.value.private_ip | default(omit) }}"
     wait: yes
     wait_timeout: 300
-#    count_tag:
-#      Name: "{{ item.value.tags.Name }}"
-#    exact_count: 1
     user_data: |
       #!/bin/bash
       # 初期設定スクリプトなど
@@ -22,10 +20,33 @@
       chkconfig httpd on
       echo 'hello,world(#1)' > /var/www/html/index.html
   with_dict: "{{ my_vars.aws.ec2 }}"
-  register: ec2_result
+  register: ec2
   when: my_vars.aws.ec2 is defined
 
-- debug: var=ec2_result
+- debug: var=ec2
+- debug: var=ec2.results[0].instance_ids
 
-#- name: yum update
-#  yum: state=latest name=*
+- name: associate new elastic IPs with each of the instances
+  ec2_eip:
+    device_id: "{{ item }}"
+    region: "{{ my_vars.aws.common.region }}"
+    in_vpc: yes
+  with_items: "{{ ec2.results[0].instance_ids }}"
+  register: eip
+
+- debug: var=eip
+
+- name: add CNAME record of PublicDNS to Route53
+  route53:
+    command: create
+    zone: aws.m510.net
+    type: A
+    value: "{{ item.public_ip }}"
+    overwrite: yes
+    record: www.aws.m510.net
+    ttl: 300
+  with_items: "{{ eip.results }}"
+  register: route53
+
+- debug: var=route53
+
