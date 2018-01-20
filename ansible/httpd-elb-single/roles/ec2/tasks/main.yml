@@ -1,0 +1,29 @@
+- name: create new ec2 instances
+  ec2:
+    image: "{{ item.value.ami_image }}"
+    instance_type: "{{ item.value.instance_type }}"
+    region: "{{ my_vars.aws.common.region }}"
+    key_name: "{{ item.value.key_name }}"
+    group: "{{ item.value.security_group }}"
+    instance_tags: "{{ item.value.tags }}"
+    count: 1
+    wait: yes
+    wait_timeout: 300
+    exact_count: 1
+    count_tag:
+      name: httpd
+    user_data: |
+      #!/bin/bash
+      # 初期設定スクリプトなど
+      yum update -y
+      yum install -y httpd
+      service httpd start
+      chkconfig httpd on
+      echo 'hello,world(#1)' > /var/www/html/index.html
+  with_dict: "{{ my_vars.aws.ec2 }}"
+  register: ec2
+  when: my_vars.aws.ec2 is defined
+
+- debug: var=ec2
+- debug: var=ec2.results[0].instance_ids
+

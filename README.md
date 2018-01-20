@@ -279,3 +279,10 @@ ansible-playbook -i hosts/aws site.yml
 cd ansible/httpd-eip-single
 ansible-playbook -i hosts/aws main.yml
 ```
+
+### EC2 httpd ELB single
+* ELB+httpd 1台
+```
+cd ansible/httpd-elb-single
+ansible-playbook -i hosts/aws main.yml
+```

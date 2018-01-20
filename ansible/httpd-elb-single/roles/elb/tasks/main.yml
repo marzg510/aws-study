@@ -1,0 +1,35 @@
+- name: get vpc id
+  ec2_vpc_net_facts:
+    region: "{{ my_vars.aws.common.region }}"
+    filters:
+      "tag:Name": "{{ my_vars.aws.vpc.name }}"
+  register: vpc_net_fact
+  check_mode: no
+
+- debug: var=vpc_net_fact
+
+- name: get vpc subnet
+  ec2_vpc_subnet_facts:
+    region: "{{ my_vars.aws.common.region }}"
+    filters:
+      vpc_id: "{{ vpc_net_fact.vpcs[0].id }}"
+  register: subnet_fact
+
+- debug: var=subnet_fact
+
+- name: create load balancer
+  ec2_elb_lb:
+    name: test-m510
+    state: present
+    region: "{{ my_vars.aws.common.region }}"
+  #    zones:
+  #    - us-west-2a
+    groups: 
+    listeners:
+      - protocol: http
+        load_balancer_port: 80
+        instance_port: 80
+  register: elb_lb
+
+- debug: var=elb_lb
+

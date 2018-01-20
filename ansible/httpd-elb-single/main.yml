@@ -1,0 +1,7 @@
+- name: ec2-httpd elb single
+  hosts: awsclihost
+  connection: local
+  roles:
+    #    - role: ec2
+    - role: elb
+
