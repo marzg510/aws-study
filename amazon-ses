@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2020-12-05T02:03:01.652Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36" etag="2bieuKMEjwRFMmw-FBV6" version="13.10.9" type="github">
+<mxfile host="app.diagrams.net" modified="2020-12-05T02:04:34.782Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36" etag="RrioroF-TGMf3LApDQ3t" version="13.10.9" type="github">
   <diagram id="qM06MgW-gL-EkChnqFOd" name="Page-1">
-    <mxGraphModel dx="813" dy="1662" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="846" dy="1768" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="CZdPMsCwPGe5dLMLJ8tG-6" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="128" y="120" width="162" height="170" as="geometry" />
+          <mxGeometry x="139" y="118" width="162" height="170" as="geometry" />
         </mxCell>
         <mxCell id="CZdPMsCwPGe5dLMLJ8tG-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CZdPMsCwPGe5dLMLJ8tG-1" target="CZdPMsCwPGe5dLMLJ8tG-4">
           <mxGeometry relative="1" as="geometry" />
@@ -14,7 +14,7 @@
           <mxGeometry x="400" y="170.1" width="106.6" height="106.6" as="geometry" />
         </mxCell>
         <mxCell id="CZdPMsCwPGe5dLMLJ8tG-2" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn1.iconfinder.com/data/icons/simple-icons/128/heroku-128-black.png" vertex="1" parent="1">
-          <mxGeometry x="139" y="120" width="48" height="48" as="geometry" />
+          <mxGeometry x="150" y="119" width="48" height="48" as="geometry" />
         </mxCell>
         <mxCell id="CZdPMsCwPGe5dLMLJ8tG-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CZdPMsCwPGe5dLMLJ8tG-3" target="CZdPMsCwPGe5dLMLJ8tG-1">
           <mxGeometry relative="1" as="geometry" />
@@ -43,13 +43,16 @@
           <mxGeometry x="416.6" y="147" width="90" height="20" as="geometry" />
         </mxCell>
         <mxCell id="CZdPMsCwPGe5dLMLJ8tG-18" value="Heroku上のRedmineを&lt;br&gt;Redmine for SE+に見立てた" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="128" y="70" width="162" height="41" as="geometry" />
+          <mxGeometry x="139" y="78" width="162" height="41" as="geometry" />
         </mxCell>
         <mxCell id="CZdPMsCwPGe5dLMLJ8tG-19" value="Redmine for SE+ (Saas版）でメール通知をしたい&lt;br&gt;&lt;br&gt;Redmine for SE+(SaaS版）はインターネット上にあるがゆえに&lt;br&gt;SCSK内のメールサーバーが使えずメール通知ができない&lt;br&gt;PJで自前でのSVを立てれば（設定すれば）できるとのことなので&lt;br&gt;やってみた" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="20" y="-70" width="475" height="120" as="geometry" />
         </mxCell>
         <mxCell id="CZdPMsCwPGe5dLMLJ8tG-21" value="今回はGmailに送信&lt;br&gt;scsk.jpに送ればscskのメールボックスに届くはず" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="560" y="109.1" width="183.4" height="61" as="geometry" />
+        </mxCell>
+        <mxCell id="CZdPMsCwPGe5dLMLJ8tG-22" value="HerokuのRedmimeにメールサーバーを設定する方法（本質ではない）&lt;br&gt;&lt;br&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="330" width="475" height="120" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
