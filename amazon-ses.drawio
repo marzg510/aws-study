@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-12-05T05:01:28.134Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36" etag="AL5RWAXMiOalpZDKSOOZ" version="13.10.9" type="github">
+<mxfile host="app.diagrams.net" modified="2020-12-05T05:02:01.567Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36" etag="4TM391i6gnIrg_uH6bKf" version="13.10.9" type="github">
   <diagram id="qM06MgW-gL-EkChnqFOd" name="Page-1">
     <mxGraphModel dx="2249" dy="1945" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -54,7 +54,7 @@
         <mxCell id="CZdPMsCwPGe5dLMLJ8tG-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="CZdPMsCwPGe5dLMLJ8tG-21" target="CZdPMsCwPGe5dLMLJ8tG-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="CZdPMsCwPGe5dLMLJ8tG-21" value="今回はGmailに送信&lt;br&gt;scsk.jpに送ればscskのメールボックスに届くはず" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="CZdPMsCwPGe5dLMLJ8tG-21" value="今回はGmailに送信&lt;br&gt;kaisha.jpに送れば会社のメールボックスに届くはず" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="540" y="288" width="183.4" height="61" as="geometry" />
         </mxCell>
         <mxCell id="CZdPMsCwPGe5dLMLJ8tG-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="CZdPMsCwPGe5dLMLJ8tG-29" target="CZdPMsCwPGe5dLMLJ8tG-6" edge="1">
