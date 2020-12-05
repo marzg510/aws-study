@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-12-05T03:58:19.583Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36" etag="WBaokuuEV7jOzSFxuQMa" version="13.10.9" type="github">
+<mxfile host="app.diagrams.net" modified="2020-12-05T03:59:15.375Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36" etag="MnsA00JaDKrM4htK-8Sp" version="13.10.9" type="github">
   <diagram id="qM06MgW-gL-EkChnqFOd" name="Page-1">
     <mxGraphModel dx="2288" dy="1945" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -71,7 +71,7 @@
         <mxCell id="CZdPMsCwPGe5dLMLJ8tG-33" value="SESだと個別にメールの認証が必要な模様&lt;br style=&quot;font-size: 16px;&quot;&gt;（ドメインごと認証も可能だが情シスへの以来など必要９&lt;br style=&quot;font-size: 16px;&quot;&gt;→SendGridのほうがよい（木澤さん）" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF3333;fontStyle=1;fontSize=16;" vertex="1" parent="1">
           <mxGeometry x="710" y="-10" width="475" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="CZdPMsCwPGe5dLMLJ8tG-35" value="今日の結論：&lt;br&gt;次回はSendGrid使って再検証します！" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF3333;fontStyle=1;fontSize=16;" vertex="1" parent="1">
+        <mxCell id="CZdPMsCwPGe5dLMLJ8tG-35" value="今日の結論：&lt;br&gt;次回はSESの代わりに&lt;br&gt;SendGrid使って再検証します！" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF3333;fontStyle=1;fontSize=16;" vertex="1" parent="1">
           <mxGeometry x="660" y="370" width="475" height="120" as="geometry" />
         </mxCell>
       </root>
